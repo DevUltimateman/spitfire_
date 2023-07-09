@@ -6,8 +6,34 @@
         xmlns:local="clr-namespace:spitfire_"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-        
+    <Grid Background="#FF0E0F25"
+          >
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"
+                           />
+
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#FF250221"
+                  Grid.Row="0"
+                   Grid.ColumnSpan="3"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="257,33,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="78" Click="Button_Click"/>
+
+
+
     </Grid>
+    
 </Window>

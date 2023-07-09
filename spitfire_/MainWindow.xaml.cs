@@ -24,5 +24,12 @@ namespace spitfire_
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            gameFolderList sw = new gameFolderList();
+
+            sw.makeGameList();
+        }
     }
 }
