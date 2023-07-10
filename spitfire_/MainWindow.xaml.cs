@@ -38,7 +38,9 @@ namespace spitfire_
             //lets call a method
             //pass false to not show debug messages
             gameFoldersToList.makeGameList( false );
+            gameFoldersToList.setAllGameLocationsAutomatically(gameFoldersToList.returnGames());
             framePageView.Content = new pageGameSettings().pageGaneSettingsView;
+            
         }
     }
 }

@@ -16,6 +16,8 @@ namespace spitfire_
 
         private string spit = "Spitfire_ ***debug";
 
+        //generic error
+        private string fuking = "we fucked up!";
         //folder extensions
         private string scriptsFolderPath_multi = "\\scripts\\mp";
         private string scriptsFolderPath_zombie = "\\scripts\\zm";
@@ -45,7 +47,21 @@ namespace spitfire_
         //Let's populate the list box with our gamelist
         public void makeGameList( bool showMessage )
         {
-            //let's get the gamelist and assign its values to listbox
+            //let's get a fresh list first, incase we have some stored already
+            if (gameListBox.Items.Count > 0 )
+            {
+                try
+                {
+                    gameListBox.Items.Clear();
+                }
+
+                catch (Exception fuckup )
+                {
+                    MessageBox.Show("Spitfire fucked up due to following reason: \n\n" + fuckup.ToString(), spit);
+                }
+            }
+
+            //let's populate the listbox.
             string[] temporary = returnGames();
             gameListBox.ItemsSource = temporary;
 
@@ -58,6 +74,10 @@ namespace spitfire_
                 {
                     MessageBox.Show(gameListBox.Items[i].ToString(), spit);
                 }
+                
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.WriteLine(gameListBox.Items[i].ToString() );
+                
                 
 
             }
@@ -115,9 +135,58 @@ namespace spitfire_
             
         }
 
-        void setAllGameLocationsAutomatically()
+        public void setAllGameLocationsAutomatically(string[] locations )
         {
+            locations = returnAllModFolders();
+
+            try
+            {
+                for (int i = 0; i < locations.Length; i++ )
+                {
+                    //it's a multiplayer folder
+                    if( i % 2 == 0 )
+                    {
+                        locations[i] = locations[i] + scriptsFolderPath_multi;
+                        if( Directory.Exists(locations[i]))
+                        {
+                            Console.WriteLine( "Folderpath : " + locations[ i ] + " isTrue") ;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Folderpath : " + locations[i] + " isInvalid");
+                        }
+                    }
+                    //it's a zombies folder
+                    else
+                    {
+                        locations[i] = locations[i] + scriptsFolderPath_zombie;
+                        if( Directory.Exists(locations[i]))
+                        {
+                            Console.WriteLine("Folderpath :" + locations[i] + " isTrue", spit);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Folderpath : " + locations[i] + " isInvalid", spit);
+                        }
+                    }
+                    
+                }
+            }
+            catch ( Exception fukk )
+            {
+
+                Console.WriteLine(fukk.Message);
+                throw new Exception(fukk.Message) ;
+            }
+
             
+            for( int x = 0; x < gameListBox.Items.Count; x++)
+            {
+                //need to fix from here when home
+                gameListBox.ItemsSource = gameListBox.Items[x].ToString() + locations[x].ToString();
+            }
+
+            gameListBox.Items.Refresh();
 
         }
     }
