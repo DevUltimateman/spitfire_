@@ -31,5 +31,37 @@ namespace spitfire_
             
             lstMylist.ItemsSource = gameFolders.returnGames();
         }
+
+
+        public void colorizeUneven()
+        {
+            //new instance of solidBrush
+            SolidColorBrush solidColorBlue = new SolidColorBrush();
+            /*
+            Ellipse ellipse = new Ellipse();
+            ellipse.Fill = solidColorBlue;            
+            */
+
+
+            for( int s = 0; s < gdBig.RowDefinitions.Count; s++ )
+            {
+                if( s % 2 != 0 )
+                {
+                    //Rectangle rec = new Rectangle();
+                    solidColorBlue.Color = Color.FromArgb(0, 0, 255, 0);
+                    
+                    //rec.Fill = solidColorBlue;
+                    
+                    rectTester.Fill = solidColorBlue;
+                }
+                else
+                {
+                    solidColorBlue.Color = Color.FromArgb(255, 100, 0, 0);
+                    rectTester.Fill = solidColorBlue;
+                }
+            }
+
+            
+        }
     }
 }

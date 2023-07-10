@@ -25,7 +25,7 @@ namespace spitfire_
             string my_appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
 
-            helpMeAutomate.makeGameList();
+            helpMeAutomate.makeGameList( false );
 
         }
     }

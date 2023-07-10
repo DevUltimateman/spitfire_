@@ -8,10 +8,11 @@
       
       ShowsNavigationUI="False"
       
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="270" d:DesignWidth="480"
       Title="pageGameSettings">
 
-    <Grid  Background="Transparent"
+    <Grid  Background="DarkGreen" x:Name="gdBig"
+           ClipToBounds="True"
            
            
            
@@ -33,24 +34,20 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Vertical"
-                    Background="AliceBlue"
-                    >
-            
-        </StackPanel>
         
+
         <Label x:Name="lblSettingsMenu"
                FontWeight="Bold"
                FontStyle="Italic"
                Content="Settings Menu"
                Grid.Row="0"
                
-               Grid.ColumnSpan="5"
+               
                Foreground="AntiqueWhite"
-               FontSize="40"
-               Grid.Column="2" Grid.RowSpan="5"/>
-        
-        
+               FontSize="25"
+               Grid.Column="1" Grid.ColumnSpan="2" Margin="25,23,102,44" Grid.RowSpan="2"/>
+
+
         <ListView x:Name="lstMylist"
             Grid.Column="1"
                   Grid.RowSpan="2"
@@ -65,7 +62,11 @@
 
 
 
-
+        <Rectangle x:Name="rectTester"
+                   Height="300"
+                   Width="300"
+                   Fill="MediumPurple"/>
+        
 
 
     </Grid>

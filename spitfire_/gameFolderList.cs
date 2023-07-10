@@ -13,7 +13,16 @@ namespace spitfire_
     {
         //let's grab user's appdata location to a variable
         public string myAppdataf = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        
+
+        private string spit = "Spitfire_ ***debug";
+
+        //folder extensions
+        private string scriptsFolderPath_multi = "\\scripts\\mp";
+        private string scriptsFolderPath_zombie = "\\scripts\\zm";
+        private string imagesFolderPath = "\\images";
+
+
+
         //create a list box where we can store a list of all the available games
         public ListBox gameListBox = new ListBox();
 
@@ -34,7 +43,7 @@ namespace spitfire_
         }
 
         //Let's populate the list box with our gamelist
-        public void makeGameList()
+        public void makeGameList( bool showMessage )
         {
             //let's get the gamelist and assign its values to listbox
             string[] temporary = returnGames();
@@ -45,22 +54,34 @@ namespace spitfire_
             //lets see if we have populated the list and print em out with msg box
             for ( int i = 0; i < gameListBox.Items.Count;i++)
             {
+                if( showMessage )
+                {
+                    MessageBox.Show(gameListBox.Items[i].ToString(), spit);
+                }
                 
-                MessageBox.Show(gameListBox.Items[i].ToString());
 
             }
             //don't include in final branch
-            MessageBox.Show("List done thru. Total number of games: " + gameListBox.Items.Count.ToString());
-            MessageBox.Show("YOUR APPDATA = " + myAppdataf);
+            MessageBox.Show( "List done thru. Total number of games: " + gameListBox.Items.Count.ToString(), spit );
+            if( showMessage )
+            {
+                MessageBox.Show("YOUR APPDATA = " + myAppdataf, spit);
+            }
             
             
+            
+            //pass in the return values to temp
             string[] temp = returnAllModFolders();
             
-            for( int v = 0; v < gameListBox.Items.Count;v++)
+            if( showMessage )
             {
-                MessageBox.Show(temp[ v ].ToString());
+                for (int v = 0; v < gameListBox.Items.Count; v++)
+                {
+                    MessageBox.Show(temp[v].ToString(), spit);
+                }
             }
-            MessageBox.Show("List of all the game locations: " + temp.Count() );
+            //Debug 
+            MessageBox.Show("List of all the game locations: " + temp.Count(), spit );
              
             
         }

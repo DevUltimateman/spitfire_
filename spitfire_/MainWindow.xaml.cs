@@ -24,16 +24,21 @@ namespace spitfire_
         {
             InitializeComponent();
 
-            //framePage.Content = new pageGameSettings().pageGaneSettingsView;
-            frameWindow.Content = new pageHome().pageHomeView;
+            //set the main locked app view upon launching the app
+            frameMainLocked.Content = new pageHome().pageHomeView;
 
+            //must add a view later, but we don't have any view yet for boot up
+            framePageView.Content = null;
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             //lets call a method
-            gameFoldersToList.makeGameList();
+            //pass false to not show debug messages
+            gameFoldersToList.makeGameList( false );
+            framePageView.Content = new pageGameSettings().pageGaneSettingsView;
         }
     }
 }
