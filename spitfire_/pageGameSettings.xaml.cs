@@ -21,14 +21,15 @@ namespace spitfire_
     /// </summary>
     public partial class pageGameSettings : Page
     {
-        
+
         openFileGlobalClass test = new openFileGlobalClass();
         gameFolderList gameFolders = new gameFolderList();
         public pageGameSettings()
         {
-           
+
             InitializeComponent();
             
+
             lstMylist.ItemsSource = gameFolders.returnGames();
         }
 
@@ -42,26 +43,49 @@ namespace spitfire_
             ellipse.Fill = solidColorBlue;            
             */
 
-
-            for( int s = 0; s < gdBig.RowDefinitions.Count; s++ )
+            /*
+            for (int s = 0; s < gdBig.RowDefinitions.Count; s++)
             {
-                if( s % 2 != 0 )
+                if (s % 2 != 0)
                 {
                     //Rectangle rec = new Rectangle();
                     solidColorBlue.Color = Color.FromArgb(0, 0, 255, 0);
                     
                     //rec.Fill = solidColorBlue;
-                    
-                    rectTester.Fill = solidColorBlue;
-                }
-                else
-                {
-                    solidColorBlue.Color = Color.FromArgb(255, 100, 0, 0);
-                    rectTester.Fill = solidColorBlue;
-                }
-            }
 
+
+                else
+                    {
+                        Console.WriteLine("This is a test ");
+                        //solidColorBlue.Color = Color.FromArgb(255, 100, 0, 0);
+                        //rectTester.Fill = solidColorBlue;
+                    }
+                }
+
+
+            }
+            */
             
         }
-    }
+        private void lblSelectFromList_MouseEnter(object sender, MouseEventArgs e)
+        {
+            lblSelectFromList.FontSize = 12.5;
+            lblSelectFromList.Foreground = Brushes.AntiqueWhite;
+            lblSelectFromList.FontWeight = FontWeights.Light;
+            lblSelectFromList.Text = "Choose the game you want to edit from the list";
+        }
+
+        private void lblSelectFromList_MouseLeave(object sender, MouseEventArgs e)
+        {
+            lblSelectFromList.Text = "Select Game";
+            lblSelectFromList.Foreground = Brushes.AntiqueWhite;
+            lblSelectFromList.FontWeight = FontWeights.Bold;
+            lblSelectFromList.FontSize = 20;
+        }
+
+        private void lstMylist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           //selectedGlistImage.ur
+        }
+    } 
 }

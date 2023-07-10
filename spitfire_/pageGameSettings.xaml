@@ -11,8 +11,8 @@
       d:DesignHeight="270" d:DesignWidth="480"
       Title="pageGameSettings">
 
-    <Grid  Background="DarkGreen" x:Name="gdBig"
-           ClipToBounds="True"
+    <Grid  Background="TRANSPARENT" x:Name="gdBig"
+           
            
            
            
@@ -22,9 +22,12 @@
           >
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="242"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="109*"/>
+
+
+
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -34,7 +37,56 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        
+
+        <Rectangle x:Name="rectLeftSide" Fill="#FF9E0000"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="1">
+
+
+
+        </Rectangle>
+
+        <Rectangle x:Name="rectLeftSide2" Fill="#FF0C133A"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Grid.RowSpan="2">
+
+
+        </Rectangle>
+
+        <Image x:Name="selectedGlistImage"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Width="100"
+               Height="100"
+               Grid.Row="1"
+               Grid.Column="0"
+               Opacity="0.7" Margin="136,28,0,0" Grid.RowSpan="2"
+               
+               
+               ></Image>
+
+
+
+
+
+
+
+
+
+
+
+        <TextBlock x:Name="lblSelectFromList"
+               Text ="Select Game"
+                   TextWrapping="WrapWithOverflow"
+               FontSize="12.5"
+                   
+                   Grid.Row="1"
+                   
+               Foreground="AntiqueWhite"
+               FontStyle="Italic"
+                 HorizontalAlignment="Left"
+                   VerticalAlignment="Center" Height="57" Width="98" Margin="10,0,0,0" MouseEnter="lblSelectFromList_MouseEnter" MouseLeave="lblSelectFromList_MouseLeave"/>
 
         <Label x:Name="lblSettingsMenu"
                FontWeight="Bold"
@@ -44,29 +96,18 @@
                
                
                Foreground="AntiqueWhite"
-               FontSize="25"
-               Grid.Column="1" Grid.ColumnSpan="2" Margin="25,23,102,44" Grid.RowSpan="2"/>
+               FontSize="25" Margin="10,10,4,10"/>
 
 
         <ListView x:Name="lstMylist"
-            Grid.Column="1"
-                  Grid.RowSpan="2"
-                  
-                  Grid.ColumnSpan="3"
                   Opacity="0.7"
-                  Margin="25,0,24,0"
-                  Background="Black"
+                  Margin="128,10,10,10"
+                  Background="Transparent"
                   Foreground="AntiqueWhite"
-                  BorderBrush="White"
-            Grid.Row="1"/>
-
-
-
-        <Rectangle x:Name="rectTester"
-                   Height="300"
-                   Width="300"
-                   Fill="MediumPurple"/>
-        
+                  Grid.Row="1"
+                  Grid.ColumnSpan="2"
+                  
+                  BorderBrush="Purple" SelectionChanged="lstMylist_SelectionChanged"/>
 
 
     </Grid>

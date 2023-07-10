@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.IO;
+using System.Collections.ObjectModel;
 
 namespace spitfire_
 {
@@ -44,6 +45,18 @@ namespace spitfire_
             return gameNames;
         }
 
+        public string[] imageList()
+        {
+
+            ListView imagelist = new ListView();
+
+            imagelist.ItemsSource = "~\\Images\\logos";
+
+
+
+
+            return null; 
+        }
         //Let's populate the list box with our gamelist
         public void makeGameList( bool showMessage )
         {
@@ -180,13 +193,7 @@ namespace spitfire_
             }
 
             
-            for( int x = 0; x < gameListBox.Items.Count; x++)
-            {
-                //need to fix from here when home
-                gameListBox.ItemsSource = gameListBox.Items[x].ToString() + locations[x].ToString();
-            }
-
-            gameListBox.Items.Refresh();
+            
 
         }
     }
