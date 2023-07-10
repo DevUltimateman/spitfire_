@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:spitfire_"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF0E0F25"
+        Title="MainWindow" Height="540" Width="960" Foreground="Transparent">
+    <Grid Background="Transparent"
           >
         <Grid.ColumnDefinitions>
 
@@ -33,7 +33,13 @@
         <Button Content="Button" HorizontalAlignment="Left" Margin="257,33,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="78" Click="Button_Click"/>
 
 
+        <Frame x:Name="framePage" Grid.RowSpan="4"
+               Grid.ColumnSpan="3"
+               />
 
+        <Frame  x:Name="frameWindow"
+                Grid.RowSpan="6"
+                Grid.ColumnSpan="6"/>
     </Grid>
     
 </Window>

@@ -13,6 +13,8 @@ namespace spitfire_
     {
         //handles the pop up window folder
         OpenFileDialog folderSelector = new OpenFileDialog();
+        //lets sniff some logic
+        gameFolderList helpMeAutomate = new gameFolderList();
 
         //this is a debug value
         public int debugCounting = 0;
@@ -21,8 +23,9 @@ namespace spitfire_
         {
             //let's find users appdata
             string my_appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            
 
+
+            helpMeAutomate.makeGameList();
 
         }
     }

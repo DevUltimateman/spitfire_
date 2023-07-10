@@ -16,23 +16,16 @@ using System.Windows.Shapes;
 namespace spitfire_
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for pageGameSettings.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class pageGameSettings : Page
     {
-        public MainWindow()
+        openFileGlobalClass test = new openFileGlobalClass();
+        gameFolderList gmf = new gameFolderList();
+        public pageGameSettings()
         {
             InitializeComponent();
-
-            //framePage.Content = new pageGameSettings().pageGaneSettingsView;
-            frameWindow.Content = new pageHome().pageHomeView;
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            gameFolderList sw = new gameFolderList();
-            sw.makeGameList();
+            lstMylist.ItemsSource = gmf.returnGames();
         }
     }
 }
