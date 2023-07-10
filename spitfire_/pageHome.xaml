@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:spitfire_"
       mc:Ignorable="d" 
       Height="540" Width="960"
+      ShowsNavigationUI="False"
       Title="pageHome">
 
-    <Grid x:Name="gridMain">
+    <Grid x:Name="gridMain" >
         <Grid.Background>
             <LinearGradientBrush EndPoint=".3,2.4" StartPoint="1.2,1">
                 <GradientStop Color="#FF3E0513"/>
@@ -69,7 +70,7 @@
                    HorizontalAlignment="Center"
                    Padding="10"
                    FontStyle="Italic"
-                   FontWeight="DemiBold" Grid.ColumnSpan="2" Margin="10,34,182,34" Grid.RowSpan="2" MouseEnter="txtHome_MouseEnter" MouseLeave="txtHome_MouseLeave" />
+                   FontWeight="DemiBold" Grid.ColumnSpan="2" Margin="10,34,182,34" Grid.RowSpan="2" MouseEnter="txtHome_MouseEnter" MouseLeave="txtHome_MouseLeave" MouseDown="txtHome_MouseDown" />
       
         <TextBlock x:Name="txtMods"
                    Foreground="White"
@@ -85,7 +86,7 @@
                    FontWeight="DemiBold" 
                    Grid.ColumnSpan="3" 
                    Margin="10,34,182,34"
-                   Grid.RowSpan="2" MouseEnter="txtMods_MouseEnter" MouseLeave="txtMods_MouseLeave" />
+                   Grid.RowSpan="2" MouseEnter="txtMods_MouseEnter" MouseLeave="txtMods_MouseLeave" MouseDown="txtMods_MouseDown" />
 
         <TextBlock x:Name="txtSettings"
                    Foreground="White"
@@ -101,7 +102,7 @@
                    FontWeight="DemiBold" 
                    Grid.ColumnSpan="4" 
                    Margin="10,34,182,34"
-                   Grid.RowSpan="2" MouseEnter="txtSettings_MouseEnter" MouseLeave="txtSettings_MouseLeave" />
+                   Grid.RowSpan="2" MouseEnter="txtSettings_MouseEnter" MouseLeave="txtSettings_MouseLeave" MouseDown="txtSettings_MouseDown" />
 
         <TextBlock x:Name="txtServers"
                    Foreground="White"
@@ -117,7 +118,14 @@
                    FontWeight="DemiBold" 
                    Grid.ColumnSpan="6" 
                    Margin="10,34,182,34"
-                   Grid.RowSpan="2" MouseEnter="txtServers_MouseEnter" MouseLeave="txtServers_MouseLeave" />
+                   Grid.RowSpan="2" MouseEnter="txtServers_MouseEnter" MouseLeave="txtServers_MouseLeave" MouseDown="txtServers_MouseDown" />
+
+        <Frame x:Name="framePageView"
+               Padding="0"
+               Grid.Column="2"
+               Grid.Row="2"
+               Grid.RowSpan="5"
+               Grid.ColumnSpan="3"/>
     </Grid>
 
 

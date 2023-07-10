@@ -21,6 +21,7 @@ namespace spitfire_
     /// </summary>
     public partial class pageHome : Page
     {
+        pageGameSettings gameSettings = new pageGameSettings();
         public pageHome()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace spitfire_
 
         private void txtSettings_MouseLeave(object sender, MouseEventArgs e)
         {
-            txtSettings.Foreground = Brushes.Red;
+            txtSettings.Foreground = Brushes.AntiqueWhite;
         }
 
         private void txtServers_MouseEnter(object sender, MouseEventArgs e)
@@ -65,7 +66,27 @@ namespace spitfire_
 
         private void txtServers_MouseLeave(object sender, MouseEventArgs e)
         {
-            txtServers.Foreground = Brushes.Red;
+            txtServers.Foreground = Brushes.AntiqueWhite;
+        }
+
+        private void txtHome_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            framePageView.Content = null;
+        }
+
+        private void txtMods_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void txtSettings_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            framePageView.Content = gameSettings.pageGaneSettingsView;
+        }
+
+        private void txtServers_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            framePageView.Content = null;
         }
     }
 }

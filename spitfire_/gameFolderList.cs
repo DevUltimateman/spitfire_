@@ -51,7 +51,6 @@ namespace spitfire_
             }
             //don't include in final branch
             MessageBox.Show("List done thru. Total amount of games: " + gameListBox.Items.Count.ToString());
-            string lol = "hey";
             MessageBox.Show("YOUR APPDATA = " + myAppdataf);
             for( int v = 0; v < gameListBox.Items.Count;v++)
             {

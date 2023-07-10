@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:spitfire_"
         mc:Ignorable="d"
-        Title="MainWindow" Height="540" Width="960" Foreground="Transparent">
+        
+        
+        Title="Spitfire_" Height="540" Width="960" Foreground="Transparent" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Cursor="">
     <Grid Background="Transparent"
+          
+          
           >
         <Grid.ColumnDefinitions>
 
@@ -35,9 +39,11 @@
 
         <Frame x:Name="framePage" Grid.RowSpan="4"
                Grid.ColumnSpan="3"
+               NavigationUIVisibility="Hidden"
                />
 
         <Frame  x:Name="frameWindow"
+                Padding="0"
                 Grid.RowSpan="6"
                 Grid.ColumnSpan="6"/>
     </Grid>
