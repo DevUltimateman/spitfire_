@@ -23,12 +23,13 @@ namespace spitfire_
     {
         
         openFileGlobalClass test = new openFileGlobalClass();
-        gameFolderList gmf = new gameFolderList();
+        gameFolderList gameFolders = new gameFolderList();
         public pageGameSettings()
         {
            
             InitializeComponent();
-            lstMylist.ItemsSource = gmf.returnGames();
+            
+            lstMylist.ItemsSource = gameFolders.returnGames();
         }
     }
 }

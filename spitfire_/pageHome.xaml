@@ -125,7 +125,9 @@
                Grid.Column="2"
                Grid.Row="2"
                Grid.RowSpan="5"
-               Grid.ColumnSpan="3"/>
+               HorizontalContentAlignment="Stretch"
+               VerticalContentAlignment="Stretch"
+               Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
     </Grid>
 
 

@@ -50,13 +50,17 @@ namespace spitfire_
 
             }
             //don't include in final branch
-            MessageBox.Show("List done thru. Total amount of games: " + gameListBox.Items.Count.ToString());
+            MessageBox.Show("List done thru. Total number of games: " + gameListBox.Items.Count.ToString());
             MessageBox.Show("YOUR APPDATA = " + myAppdataf);
+            
+            
+            string[] temp = returnAllModFolders();
+            
             for( int v = 0; v < gameListBox.Items.Count;v++)
             {
-                MessageBox.Show(returnAllModFolders().ToString());
+                MessageBox.Show(temp[ v ].ToString());
             }
-            MessageBox.Show("List of all the game locations: " + returnAllModFolders() );
+            MessageBox.Show("List of all the game locations: " + temp.Count() );
              
             
         }

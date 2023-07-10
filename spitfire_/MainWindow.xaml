@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         
         
-        Title="Spitfire_" Height="540" Width="960" Foreground="Transparent" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Cursor="">
+        Title="Spitfire_" Height="540" Width="960" Foreground="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="">
     <Grid Background="Transparent"
           
           
@@ -34,7 +34,7 @@
         <Rectangle Fill="#FF250221"
                   Grid.Row="0"
                    Grid.ColumnSpan="3"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="257,33,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="78" Click="Button_Click"/>
+
 
 
         <Frame x:Name="framePage" Grid.RowSpan="4"
@@ -46,6 +46,10 @@
                 Padding="0"
                 Grid.RowSpan="6"
                 Grid.ColumnSpan="6"/>
+
+        <Button Content="Test" HorizontalAlignment="Center" Margin="0,51,0,0" Grid.Row="2" VerticalAlignment="Top" Width="78" Click="Button_Click"/>
     </Grid>
-    
+
+
+
 </Window>

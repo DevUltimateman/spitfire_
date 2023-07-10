@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 
 namespace spitfire_
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+        //global instances
+        gameFolderList gameFoldersToList = new gameFolderList();
         public MainWindow()
         {
             InitializeComponent();
@@ -27,12 +27,13 @@ namespace spitfire_
             //framePage.Content = new pageGameSettings().pageGaneSettingsView;
             frameWindow.Content = new pageHome().pageHomeView;
 
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameFolderList sw = new gameFolderList();
-            sw.makeGameList();
+            //lets call a method
+            gameFoldersToList.makeGameList();
         }
     }
 }
