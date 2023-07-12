@@ -21,6 +21,7 @@ namespace spitfire_
     /// </summary>
     public partial class pageHome : Page
     {
+        
         pageGameSettings gameSettings = new pageGameSettings();
         public pageHome()
         {
@@ -81,12 +82,11 @@ namespace spitfire_
 
         private void txtSettings_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            framePageView.Content = gameSettings.pageGaneSettingsView;
-        }
-
-        private void txtServers_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            framePageView.Content = null;
+            
+            //mains.frameMainLocked.Content = gameSettings;
+            framePageView.Content = gameSettings;
+            
+            
         }
     }
 }

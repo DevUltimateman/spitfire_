@@ -46,14 +46,16 @@
                Grid.ColumnSpan="6"/>
 
 
+        
+
+        <Button Content="Test" HorizontalAlignment="Center" Margin="0,51,0,0" Grid.Row="2" VerticalAlignment="Top" Width="78" Click="Button_Click"/>
+
         <Frame  x:Name="framePageView"
                 Padding="0"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 Grid.RowSpan="6"
                 Grid.ColumnSpan="6" Margin="30,90,30,30"/>
-
-        <Button Content="Test" HorizontalAlignment="Center" Margin="0,51,0,0" Grid.Row="2" VerticalAlignment="Top" Width="78" Click="Button_Click"/>
     </Grid>
 
 

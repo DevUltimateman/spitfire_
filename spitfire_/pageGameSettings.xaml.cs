@@ -21,9 +21,13 @@ namespace spitfire_
     /// </summary>
     public partial class pageGameSettings : Page
     {
-
+        directoryImages temp = new directoryImages();
         openFileGlobalClass test = new openFileGlobalClass();
         gameFolderList gameFolders = new gameFolderList();
+        pageHome homepage = new pageHome();
+
+        //imageclass call
+        directoryImages myimages = new directoryImages();
         public pageGameSettings()
         {
 
@@ -85,7 +89,13 @@ namespace spitfire_
 
         private void lstMylist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           //selectedGlistImage.ur
+            //update later
+        }
+
+        private void testing()
+        {
+            homepage.framePageView.Content = pageGameSettingsView;
+            
         }
     } 
 }

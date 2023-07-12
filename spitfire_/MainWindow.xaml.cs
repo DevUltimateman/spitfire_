@@ -23,6 +23,7 @@ namespace spitfire_
     {
         //global instances
         gameFolderList gameFoldersToList = new gameFolderList();
+        pageGameSettings gamesettingspage = new pageGameSettings();
         public MainWindow()
         {
             InitializeComponent();
@@ -39,16 +40,17 @@ namespace spitfire_
         {
 
             directoryImages imagesBackdrop = new directoryImages();
+            imagesBackdrop.populateImageList();
             //imagesBackdrop.mylogo();
-            MessageBox.Show(imagesBackdrop.mylogo().ToString());
+           // MessageBox.Show(imagesBackdrop.mylogo().ToString());
 
            // MessageBox.Show(imagesBackdrop.ToString());
             //lets call a method
             //pass false to not show debug messages
             gameFoldersToList.makeGameList( false );
-            gameFoldersToList.imageList();
+            
             gameFoldersToList.setAllGameLocationsAutomatically(gameFoldersToList.returnGames());
-            framePageView.Content = new pageGameSettings().pageGaneSettingsView;
+            framePageView.Content = new pageGameSettings().pageGameSettingsView;
             
         }
     }

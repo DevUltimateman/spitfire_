@@ -47,60 +47,6 @@ namespace spitfire_
 
         }
 
-        public string[] imageList()
-        {
-            lookUpTable table = new lookUpTable();
-
-            table.populateLookUpTable();
-            Console.WriteLine();
-
-            bool ison = true;
-
-            Object myobject = new Object();
-            object myobject2 = new object();
-            object myobject3 = new object();
-            object myobject4 = new object();
-
-            myobject = Resources.ResourceManager.GetObject("bo1mplogo");
-
-            /*
-            object bo1mp = Resources.ResourceManager.GetObject("bo1mplogo");
-            object bo1zm = Resources.ResourceManager.GetObject("bo1zmlogo");
-            object bo2mp = Resources.ResourceManager.GetObject("bo2mplogo");
-            object bo2zm = Resources.ResourceManager.GetObject("bo2zmlogo");
-
-            object[] resource_my = { bo1mp, bo1zm, bo2mp, bo2zm };
-            */
-            int s = 0;
-            //Console.WriteLine("Resources = " + myobject.ToString() );
-      
-            
-
-
-
-
-
-
-
-
-
-            ListView imagelist = new ListView();
-            
-
-            imagelist.ItemsSource = "images\\logos";
-            MessageBox.Show("Imagelist, amount of pictures = " + imagelist.Items.Count.ToString());
-            imagelist.Height = 200;
-            imagelist.Width = 200;
-            imagelist.HorizontalContentAlignment = HorizontalAlignment.Center;
-            imagelist.VerticalContentAlignment = VerticalAlignment.Center;
-            string[] ss = { "lol", "myguy", "say" };
-            //MessageBox.Show(imagelist.ItemsSource.ToString());
-
-
-
-
-            return ss; 
-        }
         //Let's populate the list box with our gamelist
         public void makeGameList( bool showMessage )
         {
