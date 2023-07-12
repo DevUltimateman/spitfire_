@@ -49,8 +49,10 @@ namespace spitfire_
 
         public string[] imageList()
         {
+            lookUpTable table = new lookUpTable();
 
-            
+            table.populateLookUpTable();
+            Console.WriteLine();
 
             bool ison = true;
 
@@ -70,7 +72,7 @@ namespace spitfire_
             object[] resource_my = { bo1mp, bo1zm, bo2mp, bo2zm };
             */
             int s = 0;
-            Console.WriteLine("Resources = " + myobject.ToString() );
+            //Console.WriteLine("Resources = " + myobject.ToString() );
       
             
 

@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.IO;
+using System.Collections;
+
 namespace spitfire_
 {
     
@@ -34,7 +37,12 @@ namespace spitfire_
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            directoryImages imagesBackdrop = new directoryImages();
+            //imagesBackdrop.mylogo();
+            MessageBox.Show(imagesBackdrop.mylogo().ToString());
+
+           // MessageBox.Show(imagesBackdrop.ToString());
             //lets call a method
             //pass false to not show debug messages
             gameFoldersToList.makeGameList( false );
