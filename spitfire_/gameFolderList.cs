@@ -9,15 +9,19 @@ using System.IO;
 using System.Collections.ObjectModel;
 using spitfire_.Properties;
 
+
+
+
 namespace spitfire_
 {
     public class gameFolderList
     {
         //let's grab user's appdata location to a variable
-        public string myAppdataf = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        //private string myAppdataf = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
+        
         private string spit = "Spitfire_ ***debug";
-
+        
         //generic error
         private string fuking = "we fucked up!";
         //folder extensions
@@ -25,10 +29,19 @@ namespace spitfire_
         private string scriptsFolderPath_zombie = "\\scripts\\zm";
         private string imagesFolderPath = "\\images";
 
-        
 
-        //create a list box where we can store a list of all the available games
+        public string gameFolderNotFound = "Spitfire couln't locate ";
+        public string gameFolderAsk = "Would you like the program to create this folder automatically?";
+        
+        //create a list box where we can store a list of all the available game
         public ListBox gameListBox = new ListBox();
+
+        //appdata method
+        public string giveMeAppData()
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        }
+
 
         //this is a gamelist of all plutonium's games. method returns a list of games to a string
         public string[] returnGames() 
@@ -80,22 +93,19 @@ namespace spitfire_
                 
                 Console.BackgroundColor = ConsoleColor.Green;
                 Console.WriteLine(gameListBox.Items[i].ToString() );
-                
-                
-
             }
+
             //don't include in final branch
             MessageBox.Show( "List done thru. Total number of games: " + gameListBox.Items.Count.ToString(), spit );
             if( showMessage )
             {
-                MessageBox.Show("YOUR APPDATA = " + myAppdataf, spit);
+                MessageBox.Show("YOUR APPDATA = " + giveMeAppData(), spit);
             }
-            
-            
-            
+
             //pass in the return values to temp
             string[] temp = returnAllModFolders();
-            
+
+            //showmessage, boolean assigned during coding as an "intake"
             if( showMessage )
             {
                 for (int v = 0; v < gameListBox.Items.Count; v++)
@@ -103,41 +113,41 @@ namespace spitfire_
                     MessageBox.Show(temp[v].ToString(), spit);
                 }
             }
+
             //Debug 
             MessageBox.Show("List of all the game locations: " + temp.Count(), spit );
-             
-            
         }
 
+        //find all the modding folders and return them into an array
         public string[] returnAllModFolders()
         {
             //ok big brain time..
-
-            
             string pluto = "\\Plutonium\\storage\\";
 
-            string bo1mp = myAppdataf + pluto + "t5";
-            string bo1zm = myAppdataf + pluto + "t5";
+            string bo1mp = giveMeAppData() + pluto + "t5";
+            string bo1zm = giveMeAppData() + pluto + "t5";
 
-            string bo2mp = myAppdataf + pluto + "t6";
-            string bo2zm = myAppdataf + pluto + "t6";
+            string bo2mp = giveMeAppData() + pluto + "t6";
+            string bo2zm = giveMeAppData() + pluto + "t6";
 
-            string wawmp = myAppdataf + pluto + "t4";
-            string wawzm = myAppdataf + pluto + "t4";
+            string wawmp = giveMeAppData() + pluto + "t4";
+            string wawzm = giveMeAppData() + pluto + "t4";
 
-            string mw = myAppdataf + pluto + "iw5";
+            string mw = giveMeAppData() + pluto + "iw5";
 
             string[] mygamelocations = { bo1mp, bo1zm,
                                         bo2mp, bo2zm,
                                             wawmp, wawzm, mw };
 
-           
 
+            
             //lets return all
             return mygamelocations;
             
         }
 
+
+        //set the game folders by default
         public void setAllGameLocationsAutomatically(string[] locations )
         {
             locations = returnAllModFolders();
@@ -154,11 +164,25 @@ namespace spitfire_
                         {
                             Console.WriteLine( "Folderpath : " + locations[ i ] + " isTrue") ;
                         }
+                        
+                        //we didn't find the directory by default
                         else
                         {
-                            Console.WriteLine("Folderpath : " + locations[i] + " isInvalid");
+                            MessageBoxResult ask_user = MessageBox.Show( "What the fuck" );
+                            if( ask_user != MessageBoxResult.Yes )
+                            {
+                                
+                                Console.WriteLine("Folderpath : " + locations[i] + " isInvalid");
+                                Console.WriteLine("Skipping entry " + locations[ i ]);
+                            }
+                            else if ( ask_user == MessageBoxResult.Yes )
+                            {
+                                Directory.CreateDirectory(locations[i] + scriptsFolderPath_multi);
+                                Console.WriteLine("Created a folder " + locations[i] + " mp", spit);
+                            }
                         }
                     }
+
                     //it's a zombies folder
                     else
                     {
@@ -167,9 +191,22 @@ namespace spitfire_
                         {
                             Console.WriteLine("Folderpath :" + locations[i] + " isTrue", spit);
                         }
+
+                        //Ask if user wants the program to make the folders by itself
                         else
                         {
-                            Console.WriteLine("Folderpath : " + locations[i] + " isInvalid", spit);
+                            MessageBoxResult ask_user_zm = MessageBox.Show("What the fuck zm");
+                            if( ask_user_zm != MessageBoxResult.Yes )
+                            {
+                                Console.WriteLine("Folderpath : " + locations[i] + " isInvalid", spit);
+                                Console.WriteLine("Skipping location " + locations[i]);
+                            }
+                            else if ( ask_user_zm == MessageBoxResult.Yes )
+                            {
+                                Directory.CreateDirectory(locations[i] + scriptsFolderPath_zombie);
+                                Console.WriteLine("Create a folder " + locations[i] + " zm", spit);
+                            }
+                            
                         }
                     }
                     
@@ -181,10 +218,6 @@ namespace spitfire_
                 Console.WriteLine(fukk.Message);
                 throw new Exception(fukk.Message) ;
             }
-
-            
-            
-
         }
     }
 }

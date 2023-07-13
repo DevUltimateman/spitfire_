@@ -9,6 +9,8 @@
       ShowsNavigationUI="False"
       
       d:DesignHeight="270" d:DesignWidth="480"
+      Grid.RowSpan="6"
+      Grid.ColumnSpan="6"
       Title="pageGameSettings">
 
     <Grid  Background="TRANSPARENT" x:Name="gdBig"

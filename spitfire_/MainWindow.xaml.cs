@@ -30,7 +30,6 @@ namespace spitfire_
 
             //set the main locked app view upon launching the app
             frameMainLocked.Content = new pageHome().pageHomeView;
-
             //must add a view later, but we don't have any view yet for boot up
             framePageView.Content = null;
 
@@ -53,5 +52,7 @@ namespace spitfire_
             framePageView.Content = new pageGameSettings().pageGameSettingsView;
             
         }
+
+        
     }
 }
