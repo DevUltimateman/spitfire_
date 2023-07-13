@@ -113,7 +113,7 @@ namespace spitfire_
                     MessageBox.Show(temp[v].ToString(), spit);
                 }
             }
-
+            //spitfire is getting bamboozeld rn
             //Debug 
             MessageBox.Show("List of all the game locations: " + temp.Count(), spit );
         }
